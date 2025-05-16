@@ -1,2 +1,6 @@
-/Users/efeisildar/ics-wtp-mono/mono-backend/src/main/java/com/example/HelloController.java
+/Users/efeisildar/ics-wtp-mono/mono-backend/src/main/java/com/example/mono_backend/HelloController.java
 /Users/efeisildar/ics-wtp-mono/mono-backend/src/main/java/com/example/mono_backend/MonoBackendApplication.java
+/Users/efeisildar/ics-wtp-mono/mono-backend/src/main/java/com/example/mono_backend/UserController.java
+/Users/efeisildar/ics-wtp-mono/mono-backend/src/main/java/com/example/mono_backend/config/CorsConfig.java
+/Users/efeisildar/ics-wtp-mono/mono-backend/src/main/java/com/example/mono_backend/model/User.java
+/Users/efeisildar/ics-wtp-mono/mono-backend/src/main/java/com/example/mono_backend/repository/UserRepository.java
