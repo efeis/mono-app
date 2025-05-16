@@ -1,0 +1,46 @@
+
+@font-face {
+  font-family: 'BerlinTypeOffice';
+  src: url('./assets/fonts/BerlinTypeOffice-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'BerlinTypeOffice';
+  src: url('./assets/fonts/BerlinTypeOffice-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'NotoSansMono';
+  src: url('./assets/fonts/NotoSansMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'NotoSansMono';
+  src: url('./assets/fonts/NotoSansMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+.input {
+  width: 93%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #000000;
+  font-family: NotoSansMono, monospace;
+  font-weight: 400;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border-color: #2040A7 !important;
+  outline: none;
+  box-shadow: 0 0 5px rgba(32, 64, 167, 0.3);
+}
+
+button:hover {
+  background-color: #163090;
+  transform: scale(1.05);
+}
