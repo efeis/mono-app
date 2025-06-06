@@ -6,10 +6,11 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
 
-      @Id
+      @Id // set id as the primary key
       @GeneratedValue(strategy = GenerationType.IDENTITY)
       private Long id;
 
+      // COLUMNS:
       @Column(nullable = false, unique = true)
       private String username;
 
