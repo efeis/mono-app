@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi"; // icons for password visibility toggle
 
-console.log("AuthForm loaded");
+console.log("authForm loaded");
 
 export default function AuthForm() {
   const [mode, setMode] = useState("login"); // login or register
@@ -26,8 +26,9 @@ export default function AuthForm() {
       const result = await res.text();
 
       if (result === "ok") {
+        localStorage.setItem("username", username);  // Store username
         setMessage(`🥳 welcome back, ${username}!`);
-        navigate("/"); // navigate to the PostForm
+        navigate("/");
       } else if (result === "wrong-password") {
         setMessage("😕 the password's not quite right.")
       } else if (result === "taken") {
@@ -51,7 +52,7 @@ export default function AuthForm() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      fontFamily: "BerlinTypeOffice",
+      fontFamily: "BerlinType",
       fontWeight: '400',
       backgroundColor: "#F8FAFC",
     }}>
@@ -59,15 +60,24 @@ export default function AuthForm() {
         width: "100%",
         maxWidth: "400px",
         background: "#F8FAFC",
-        padding: "3rem",
+        padding: "2.5rem",
         borderRadius: "3rem",
         boxShadow: "0 0 100px rgba(32, 64, 167, 0.1)",
         textAlign: "center"
       }}>
 
         {/* LOGO AND HEADING */}
-        <img src="/logo-4x.png" alt="Mono Logo"
-        style={{ width: "90px", borderRadius: "1.5rem", boxShadow: "0 0 50px rgba(32, 64, 167, 0.1)"}} />
+        <img
+          src="/logo-4x.png"
+          alt="Mono Logo"
+          style={{
+            width: "100px",
+            borderRadius: "1.2rem",
+            boxShadow: "0 0 50px rgba(32, 64, 167, 0.1)",
+            display: "block",
+            margin: "0 auto",      
+          }}
+        />
 
         <h2 style={{ color: "#2040A7", marginBottom: "0.8rem"}}>
           {mode === "login" ? "welcome to mono!" : "join mono today!"}
@@ -175,9 +185,8 @@ const buttonStyle = {
   borderRadius: "1.5rem",
   border: "none",
   cursor: "pointer",
-  fontSize: "1rem",
-  fontFamily: "BerlinTypeOffice",
-  fontWeight: "700",
+  fontSize: "1.2rem",
+  fontFamily: "BerlinType",
   transition: "background-color 1s ease, transform 0.2s ease"
 };
 
@@ -187,7 +196,7 @@ const linkStyle = {
   color: "#EA9DF1",
   fontWeight: "bold",
   cursor: "pointer",
-  fontFamily: "BerlinTypeOffice",
+  fontFamily: "BerlinType",
   textDecoration: "underline"
 };
 

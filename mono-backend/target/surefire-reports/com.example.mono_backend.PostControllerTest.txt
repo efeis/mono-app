@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.example.mono_backend.PostControllerTest
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.042 s <<< FAILURE! -- in com.example.mono_backend.PostControllerTest
+com.example.mono_backend.PostControllerTest.testGetAllPosts_noParams_returnsAllPosts -- Time elapsed: 0.016 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$[0].content" expected:<B> but was:<A>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.mono_backend.PostControllerTest.testGetAllPosts_noParams_returnsAllPosts(PostControllerTest.java:208)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

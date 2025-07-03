@@ -3,25 +3,35 @@ package com.example.mono_backend.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+// POST ENTITY
+// represents a microblog post in the database
 @Entity
 @Table(name = "posts")
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment ID
     private Long id;
 
-    @Column(nullable = false, length = 280)
+    @Column(nullable = false, length = 280) // max 280 chars like twitter :p
     private String content;
 
-    @Column(nullable = false)
+    @Column(nullable = false) // like counter
+    private int likes = 0;
+
+    @Column(nullable = false) // when post was created
     private LocalDateTime timestamp;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    // relationship to user who created the post
+    @ManyToOne(fetch = FetchType.LAZY) // many posts can belong to one user
+    @JoinColumn(name = "user_id", nullable = false) // foreign key
+    @JsonIgnoreProperties({"posts"}) // prevent circular reference in JSON
     private User author;
 
-    public Post() {}
+    // CONSTRUCTORS:
+    public Post() {} // required by JPA
 
     public Post(String content, LocalDateTime timestamp, User author) {
         this.content = content;
@@ -29,32 +39,28 @@ public class Post {
         this.author = author;
     }
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
+    // convenience method to get author username for JSON responses
+    public String getUsername() {
+        return author != null ? author.getUsername() : null;
     }
 
-    public String getContent() {
-        return content;
-    }
+    // getters and setters
+    public Long getId() { return id; }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+    public String getContent() { return content; }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
+    public void setContent(String content) { this.content = content; }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
+    public LocalDateTime getTimestamp() { return timestamp; }
 
-    public User getAuthor() {
-        return author;
-    }
+    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 
-    public void setAuthor(User author) {
-        this.author = author;
-    }
+    public User getAuthor() { return author; }
+
+    public void setAuthor(User author) { this.author = author; }
+
+    public int getLikes() { return likes; }
+
+    public void setLikes(int likes) { this.likes = likes; }
+    
 }

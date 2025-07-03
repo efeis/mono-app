@@ -1,9 +1,12 @@
 package com.example.mono_backend.dto;
 
+// POST REQUEST DTO
+// data transfer object for incoming post creation and like requests
 public class PostRequest {
-    private String content;
-    private String username;
+    private String content;  // post content
+    private String username; // user making the request
 
+    // getters and setters
     public String getContent() {
         return content;
     }

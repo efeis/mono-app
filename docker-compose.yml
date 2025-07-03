@@ -1,28 +1,49 @@
-version: '3.8'
+# DOCKER COMPOSE CONFIGURATION
+# orchestrates the full application stack (database, backend, frontend)
+
 services:
+  # MARIADB DATABASE
   db:
     image: mariadb:latest
+    container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: asdf1234
-      MYSQL_DATABASE: mono
+      MYSQL_ROOT_PASSWORD: asdf1234  # database password
+      MYSQL_DATABASE: mono           # create mono database
     ports:
-      - "3306:3306"
+      - "3306:3306"                  # expose mysql port
     volumes:
-      - db_data:/var/lib/mariadb
+      - db_data:/var/lib/mysql       # persist database data
+    networks:
+      - app-network
 
+  # SPRINGBOOT BACKEND
   mono-backend:
-    build: ./mono-backend
-    ports:
-      - "8080:8080"
+    build: ./mono-backend            # build from backend dockerfile
+    container_name: mono-backend
     depends_on:
-      - db
+      - db                          # wait for database to start
+    ports:
+      - "8080:8080"                 # expose backend api port
+    networks:
+      - app-network
 
+  # REACT FRONTEND
   mono-frontend:
-    build: ./mono-frontend
-    ports:
-      - "80:3000"
+    build:
+      context: ./mono-frontend      # build from frontend dockerfile
+      args:
+        VITE_API_URL: http://localhost:8080  # backend url for production
+    container_name: mono-frontend
     depends_on:
-      - mono-backend
+      - mono-backend                # wait for backend to start
+    ports:
+      - "80:80"                     # expose frontend on port 80
+    networks:
+      - app-network
 
 volumes:
-  db_data:
+  db_data:                          # named volume for database persistence
+
+networks:
+  app-network:
+    driver: bridge                  # internal network for service communication

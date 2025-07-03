@@ -1,13 +1,13 @@
 
 @font-face {
-  font-family: 'BerlinTypeOffice';
-  src: url('./assets/fonts/BerlinTypeOffice-Regular.ttf') format('truetype');
+  font-family: 'BerlinType';
+  src: url('./assets/fonts/BerlinTypeWeb-Regular.woff2') format('woff2');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'BerlinTypeOffice';
-  src: url('./assets/fonts/BerlinTypeOffice-Bold.ttf') format('truetype');
+  font-family: 'BerlinType';
+  src: url('./assets/fonts/BerlinTypeWeb-Bold.woff2') format('woff2');
   font-weight: 700;
 }
 
@@ -28,7 +28,7 @@
   padding: 0.75rem;
   margin-bottom: 1rem;
   border-radius: 1rem;
-  border: 1px solid #000000;
+  border: 1px solid #1E1E1E;
   font-family: NotoSansMono, monospace;
   font-weight: 400;
   transition: border 0.3s ease;
@@ -43,4 +43,36 @@ input:focus {
 button:hover {
   background-color: #163090;
   transform: scale(1.05);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.tooltip-text {
+  opacity: 0;
+}
+
+div:hover .tooltip-text {
+  opacity: 1;
+}
+
+.nav-item-wrapper .tooltip-text {
+  position: absolute;
+  bottom: -40px;
+  background-color: #2040A7;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.nav-item-wrapper:hover .tooltip-text {
+  opacity: 1;
 }
