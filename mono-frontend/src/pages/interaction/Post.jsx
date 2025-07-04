@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Post({ post, liked, onToggleLike }) {
+export default function Post({ post, liked, onToggleLike, onDelete }) {
   const [isLiked, setIsLiked]     = useState(liked);
   const [likeCount, setLikeCount] = useState(post.likes || 0);
   const me = localStorage.getItem("username");

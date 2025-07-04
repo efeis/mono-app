@@ -8,8 +8,8 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
 
-    @Id // primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;
 
     // COLUMNS:
@@ -36,7 +36,7 @@ public class User {
         this.password = password;
     }
 
-    // GETTERS AND SETTERS:
+    // getters and setters
     public Long getId() { return id; }
 
     public String getUsername() { return username; }

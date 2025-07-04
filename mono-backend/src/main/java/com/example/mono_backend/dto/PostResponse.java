@@ -12,6 +12,7 @@ public class PostResponse {
     private LocalDateTime timestamp;
     private boolean likedByUser;
 
+    // constructor for creating PostResponse from Post entity
     public PostResponse(Long id, String username, String content,
                         int likes, LocalDateTime timestamp,
                         boolean likedByUser) {

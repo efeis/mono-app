@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
+// controller for handling user-related operations
+// allows user registration, login, profile management, and follow/unfollow operations
+
 @CrossOrigin(origins = "http://localhost:3000") // allow frontend requests
 @RestController
 @RequestMapping("/api/users")

@@ -18,6 +18,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
+// controller for handling posts
+// allows creating posts, liking/unliking, fetching posts, and managing feeds
+
 @CrossOrigin(origins = "http://localhost:3000") // allow frontend requests
 @RestController
 @RequestMapping("/api/posts")

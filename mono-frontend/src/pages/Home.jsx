@@ -32,7 +32,7 @@ export default function Home() {
       });
       if ((await res.text()) === "post-created") {
         setPostText("");
-        await fetchFeed();
+        await fetchFeed(); // Refresh posts after new post
       }
     } catch (err) {
       console.error("Error posting:", err);
@@ -51,6 +51,10 @@ export default function Home() {
           : p
       )
     );
+  };
+
+  const handleDelete = (postId) => {
+    setPosts((prev) => prev.filter((p) => p.id !== postId));
   };
 
   return (
@@ -142,6 +146,7 @@ export default function Home() {
             post={p}
             liked={p.likedByUser}
             onToggleLike={handleLikeToggle}
+            onDelete={handleDelete} // ✅ Pass delete handler
           />
         ))}
       </div>

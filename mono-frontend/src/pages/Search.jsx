@@ -2,20 +2,26 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Search() {
+  // states to hold the search query, results, and following status
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [followingSet, setFollowingSet] = useState(new Set());
   const username = localStorage.getItem("username");
   const navigate = useNavigate();
 
+  // when the query changes, fetch results after a delay
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
       return;
     }
+    // AbortController to cancel previous fetch if query changes
     const controller = new AbortController();
+
+    // delay the fetch to avoid too many requests
     const handle = setTimeout(async () => {
       try {
+        // fetch users matching the query, excluding the current user
         const res = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/api/users/search` +
             `?q=${encodeURIComponent(query)}` +
@@ -24,20 +30,28 @@ export default function Search() {
         );
         if (!res.ok) throw new Error("Search failed");
         const users = await res.json();
+
+        // save results and following status
         setResults(users);
+
+        // build a set of usernames that the current user is following
         setFollowingSet(new Set(
           users.filter(u => u.isFollowing).map(u => u.username)
         ));
       } catch (err) {
+        // ignore abort errors
         if (err.name !== "AbortError") console.error(err);
       }
     }, 300);
+
+    // cleanup function to clear timeout and abort fetch
     return () => {
       clearTimeout(handle);
       controller.abort();
     };
   }, [query, username]);
 
+  // toggle follow/unfollow for a user
   const toggleFollow = async (other) => {
     try {
       const method = followingSet.has(other) ? "DELETE" : "POST";
@@ -114,6 +128,7 @@ export default function Search() {
         }}
       >
         {results.map(user => (
+          // Each user card
           <div
             key={user.username}
             style={{
@@ -139,6 +154,7 @@ export default function Search() {
             >
               @{user.username}
             </span>
+            {/* Display followers count */}
             {user.username !== username && (
               <button
                 onClick={() => toggleFollow(user.username)}

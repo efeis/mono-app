@@ -1,7 +1,7 @@
 package com.example.mono_backend;
 
 // SPRING BOOT APPLICATION ENTRY POINT
-// main class that starts the microblogging backend server
+// main class that starts the Spring Boot application
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

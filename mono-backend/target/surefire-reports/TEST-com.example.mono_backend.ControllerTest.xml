@@ -1,0 +1,1502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.mono_backend.ControllerTest" time="5.922" tests="23" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/efeisildar/ics-wtp-mono/mono-backend/target/test-classes:/Users/efeisildar/ics-wtp-mono/mono-backend/target/classes:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.5/spring-boot-starter-data-jpa-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.5/spring-boot-starter-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot/3.4.5/spring-boot-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.5/spring-boot-autoconfigure-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.5/spring-boot-starter-logging-3.4.5.jar:/Users/efeisildar/.m2/repository/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar:/Users/efeisildar/.m2/repository/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar:/Users/efeisildar/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/efeisildar/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/efeisildar/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/efeisildar/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/efeisildar/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.5/spring-boot-starter-jdbc-3.4.5.jar:/Users/efeisildar/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-jdbc/6.2.6/spring-jdbc-6.2.6.jar:/Users/efeisildar/.m2/repository/org/hibernate/orm/hibernate-core/6.6.13.Final/hibernate-core-6.6.13.Final.jar:/Users/efeisildar/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/efeisildar/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/efeisildar/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/Users/efeisildar/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/Users/efeisildar/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/Users/efeisildar/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/efeisildar/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/Users/efeisildar/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/Users/efeisildar/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/Users/efeisildar/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/Users/efeisildar/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/Users/efeisildar/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/efeisildar/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/efeisildar/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/efeisildar/.m2/repository/org/springframework/data/spring-data-jpa/3.4.5/spring-data-jpa-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/data/spring-data-commons/3.4.5/spring-data-commons-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-orm/6.2.6/spring-orm-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-context/6.2.6/spring-context-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-aop/6.2.6/spring-aop-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-tx/6.2.6/spring-tx-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-beans/6.2.6/spring-beans-6.2.6.jar:/Users/efeisildar/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-aspects/6.2.6/spring-aspects-6.2.6.jar:/Users/efeisildar/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.5/spring-boot-starter-web-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.5/spring-boot-starter-json-3.4.5.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.3/jackson-databind-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.3/jackson-annotations-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.3/jackson-core-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.3/jackson-datatype-jdk8-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.3/jackson-datatype-jsr310-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.3/jackson-module-parameter-names-2.18.3.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.5/spring-boot-starter-tomcat-3.4.5.jar:/Users/efeisildar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar:/Users/efeisildar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.40/tomcat-embed-el-10.1.40.jar:/Users/efeisildar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.40/tomcat-embed-websocket-10.1.40.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-web/6.2.6/spring-web-6.2.6.jar:/Users/efeisildar/.m2/repository/io/micrometer/micrometer-observation/1.14.6/micrometer-observation-1.14.6.jar:/Users/efeisildar/.m2/repository/io/micrometer/micrometer-commons/1.14.6/micrometer-commons-1.14.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-webmvc/6.2.6/spring-webmvc-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-expression/6.2.6/spring-expression-6.2.6.jar:/Users/efeisildar/.m2/repository/org/mariadb/jdbc/mariadb-java-client/3.3.3/mariadb-java-client-3.3.3.jar:/Users/efeisildar/.m2/repository/com/github/waffle/waffle-jna/3.3.0/waffle-jna-3.3.0.jar:/Users/efeisildar/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/efeisildar/.m2/repository/net/java/dev/jna/jna-platform/5.13.0/jna-platform-5.13.0.jar:/Users/efeisildar/.m2/repository/org/slf4j/jcl-over-slf4j/2.0.17/jcl-over-slf4j-2.0.17.jar:/Users/efeisildar/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.1.8/caffeine-3.1.8.jar:/Users/efeisildar/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/Users/efeisildar/.m2/repository/org/checkerframework/checker-qual/3.32.0/checker-qual-3.32.0.jar:/Users/efeisildar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.3.0/springdoc-openapi-starter-webmvc-ui-2.3.0.jar:/Users/efeisildar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.3.0/springdoc-openapi-starter-webmvc-api-2.3.0.jar:/Users/efeisildar/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.3.0/springdoc-openapi-starter-common-2.3.0.jar:/Users/efeisildar/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.19/swagger-core-jakarta-2.2.19.jar:/Users/efeisildar/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/Users/efeisildar/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.19/swagger-annotations-jakarta-2.2.19.jar:/Users/efeisildar/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.19/swagger-models-jakarta-2.2.19.jar:/Users/efeisildar/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3.jar:/Users/efeisildar/.m2/repository/org/webjars/swagger-ui/5.10.3/swagger-ui-5.10.3.jar:/Users/efeisildar/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.5/spring-boot-starter-test-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-test/3.4.5/spring-boot-test-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.5/spring-boot-test-autoconfigure-3.4.5.jar:/Users/efeisildar/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/efeisildar/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/efeisildar/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/efeisildar/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/efeisildar/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/efeisildar/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/efeisildar/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/Users/efeisildar/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/efeisildar/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/Users/efeisildar/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/efeisildar/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/Users/efeisildar/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/Users/efeisildar/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/Users/efeisildar/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/Users/efeisildar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/Users/efeisildar/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/efeisildar/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/Users/efeisildar/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/efeisildar/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-core/6.2.6/spring-core-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-jcl/6.2.6/spring-jcl-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-test/6.2.6/spring-test-6.2.6.jar:/Users/efeisildar/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/efeisildar/ics-wtp-mono/mono-backend/target/surefire/surefirebooter-20250704141557883_3.jar /Users/efeisildar/ics-wtp-mono/mono-backend/target/surefire 2025-07-04T14-15-57_838-jvmRun1 surefire-20250704141557883_1tmp surefire_0-20250704141557883_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/efeisildar/ics-wtp-mono/mono-backend/target/test-classes:/Users/efeisildar/ics-wtp-mono/mono-backend/target/classes:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.5/spring-boot-starter-data-jpa-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.5/spring-boot-starter-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot/3.4.5/spring-boot-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.5/spring-boot-autoconfigure-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.5/spring-boot-starter-logging-3.4.5.jar:/Users/efeisildar/.m2/repository/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar:/Users/efeisildar/.m2/repository/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar:/Users/efeisildar/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/Users/efeisildar/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/efeisildar/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/Users/efeisildar/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/efeisildar/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.5/spring-boot-starter-jdbc-3.4.5.jar:/Users/efeisildar/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-jdbc/6.2.6/spring-jdbc-6.2.6.jar:/Users/efeisildar/.m2/repository/org/hibernate/orm/hibernate-core/6.6.13.Final/hibernate-core-6.6.13.Final.jar:/Users/efeisildar/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/efeisildar/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/efeisildar/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/Users/efeisildar/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/Users/efeisildar/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/Users/efeisildar/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/Users/efeisildar/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/Users/efeisildar/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/Users/efeisildar/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/Users/efeisildar/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/Users/efeisildar/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/Users/efeisildar/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/efeisildar/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/efeisildar/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/efeisildar/.m2/repository/org/springframework/data/spring-data-jpa/3.4.5/spring-data-jpa-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/data/spring-data-commons/3.4.5/spring-data-commons-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-orm/6.2.6/spring-orm-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-context/6.2.6/spring-context-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-aop/6.2.6/spring-aop-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-tx/6.2.6/spring-tx-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-beans/6.2.6/spring-beans-6.2.6.jar:/Users/efeisildar/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-aspects/6.2.6/spring-aspects-6.2.6.jar:/Users/efeisildar/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.5/spring-boot-starter-web-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.5/spring-boot-starter-json-3.4.5.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.3/jackson-databind-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.3/jackson-annotations-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.3/jackson-core-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.3/jackson-datatype-jdk8-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.3/jackson-datatype-jsr310-2.18.3.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.3/jackson-module-parameter-names-2.18.3.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.5/spring-boot-starter-tomcat-3.4.5.jar:/Users/efeisildar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar:/Users/efeisildar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.40/tomcat-embed-el-10.1.40.jar:/Users/efeisildar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.40/tomcat-embed-websocket-10.1.40.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-web/6.2.6/spring-web-6.2.6.jar:/Users/efeisildar/.m2/repository/io/micrometer/micrometer-observation/1.14.6/micrometer-observation-1.14.6.jar:/Users/efeisildar/.m2/repository/io/micrometer/micrometer-commons/1.14.6/micrometer-commons-1.14.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-webmvc/6.2.6/spring-webmvc-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-expression/6.2.6/spring-expression-6.2.6.jar:/Users/efeisildar/.m2/repository/org/mariadb/jdbc/mariadb-java-client/3.3.3/mariadb-java-client-3.3.3.jar:/Users/efeisildar/.m2/repository/com/github/waffle/waffle-jna/3.3.0/waffle-jna-3.3.0.jar:/Users/efeisildar/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/efeisildar/.m2/repository/net/java/dev/jna/jna-platform/5.13.0/jna-platform-5.13.0.jar:/Users/efeisildar/.m2/repository/org/slf4j/jcl-over-slf4j/2.0.17/jcl-over-slf4j-2.0.17.jar:/Users/efeisildar/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.1.8/caffeine-3.1.8.jar:/Users/efeisildar/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/Users/efeisildar/.m2/repository/org/checkerframework/checker-qual/3.32.0/checker-qual-3.32.0.jar:/Users/efeisildar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.3.0/springdoc-openapi-starter-webmvc-ui-2.3.0.jar:/Users/efeisildar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.3.0/springdoc-openapi-starter-webmvc-api-2.3.0.jar:/Users/efeisildar/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.3.0/springdoc-openapi-starter-common-2.3.0.jar:/Users/efeisildar/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.19/swagger-core-jakarta-2.2.19.jar:/Users/efeisildar/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/Users/efeisildar/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.19/swagger-annotations-jakarta-2.2.19.jar:/Users/efeisildar/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.19/swagger-models-jakarta-2.2.19.jar:/Users/efeisildar/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/efeisildar/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3.jar:/Users/efeisildar/.m2/repository/org/webjars/swagger-ui/5.10.3/swagger-ui-5.10.3.jar:/Users/efeisildar/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.5/spring-boot-starter-test-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-test/3.4.5/spring-boot-test-3.4.5.jar:/Users/efeisildar/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.5/spring-boot-test-autoconfigure-3.4.5.jar:/Users/efeisildar/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/efeisildar/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/efeisildar/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/efeisildar/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/Users/efeisildar/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/Users/efeisildar/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/Users/efeisildar/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/Users/efeisildar/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/efeisildar/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/Users/efeisildar/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/efeisildar/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/Users/efeisildar/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/Users/efeisildar/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/Users/efeisildar/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/Users/efeisildar/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/Users/efeisildar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/Users/efeisildar/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/efeisildar/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/Users/efeisildar/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/efeisildar/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-core/6.2.6/spring-core-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-jcl/6.2.6/spring-jcl-6.2.6.jar:/Users/efeisildar/.m2/repository/org/springframework/spring-test/6.2.6/spring-test-6.2.6.jar:/Users/efeisildar/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/efeisildar"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-01-21"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/efeisildar/ics-wtp-mono/mono-backend"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/efeisildar/ics-wtp-mono/mono-backend/target/surefire/surefirebooter-20250704141557883_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="23.0.2"/>
+    <property name="user.name" value="efeisildar"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.5"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/efeisildar/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/pr/hxrfzzkx3xb2qm8sp1_sfl500000gn/T/"/>
+    <property name="java.version" value="23.0.2"/>
+    <property name="user.dir" value="/Users/efeisildar/ics-wtp-mono/mono-backend"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="78813"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/efeisildar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="23.0.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="testLoginUser_success" classname="com.example.mono_backend.ControllerTest" time="0.403">
+    <system-out><![CDATA[14:15:58.239 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.mono_backend.ControllerTest]: ControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:15:58.298 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.mono_backend.MonoBackendApplication for test class com.example.mono_backend.ControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:15:58.477+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:15:58.478+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:15:58.741+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:15:58.759+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:15:58.890+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:15:58.975+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:4fa1b70c-bd83-4c2d-aefd-64bf2d537716;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:15:59.108+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:15:59.138+02:00  INFO 78813 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-07-04T14:15:59.157+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:15:59.269+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:15:59.291+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:15:59.299+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@1ad1be5d']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:15:59.647+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:15:59.669+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:15:59.926+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:15:59.946+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:00.118+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:00.118+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:00.119+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-07-04T14:16:00.133+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 1.775 seconds (process running for 2.211)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+2025-07-04T14:16:00.536+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/efeisildar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="testCannotLikeOwnPost_returns400" classname="com.example.mono_backend.ControllerTest" time="0.02">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:00.554+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:00.554+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:00.599+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:00.602+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:00.633+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:00.641+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:ddde298b-95ed-41d7-bed2-298b53237489;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:00.648+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:00.650+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:00.654+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:00.655+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:00.655+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@3aede2ff']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:00.670+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:00.675+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:00.719+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:00.724+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:00.761+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:00.761+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:00.762+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-07-04T14:16:00.765+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.223 seconds (process running for 2.843)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+2025-07-04T14:16:00.784+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetLikedIds" classname="com.example.mono_backend.ControllerTest" time="0.067">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:00.795+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:00.795+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:00.840+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:00.842+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:00.866+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:00.873+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:f6858fef-6394-4d9c-8ec2-bfad9b1062a0;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:00.879+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:00.880+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:00.883+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:00.884+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:00.884+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@639f5460']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:00.897+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:00.901+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:00.936+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:00.946+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:00.991+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:00.991+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:00.992+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:00.995+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.208 seconds (process running for 3.073)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+Hibernate: insert into likes (post_id,user_id,id) values (?,?,default)
+Hibernate: select count(l1_0.id) from likes l1_0 where l1_0.post_id=?
+Hibernate: update posts set user_id=?,content=?,likes=?,timestamp=? where id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+Hibernate: insert into likes (post_id,user_id,id) values (?,?,default)
+Hibernate: select count(l1_0.id) from likes l1_0 where l1_0.post_id=?
+Hibernate: update posts set user_id=?,content=?,likes=?,timestamp=? where id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=?
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+2025-07-04T14:16:01.062+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetPosts" classname="com.example.mono_backend.ControllerTest" time="0.02">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:01.074+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:01.074+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:01.110+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:01.116+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:01.138+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:01.144+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:2cf794b4-27f0-42fe-93d3-386823193337;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:01.150+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:01.150+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:01.154+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:01.154+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:01.154+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@77a38cec']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:01.167+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:01.170+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:01.202+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:01.206+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:01.233+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:01.233+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:01.233+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:01.237+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.173 seconds (process running for 3.315)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 left join users a1_0 on a1_0.id=p1_0.user_id where a1_0.username=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+2025-07-04T14:16:01.255+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testLoginUser_notFound" classname="com.example.mono_backend.ControllerTest" time="0.01">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:01.269+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:01.269+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:01.303+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:01.306+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:01.326+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:01.332+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:1470ca75-be3b-4527-b506-b1c709be065b;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:01.336+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:01.337+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:01.340+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:01.341+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:01.341+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@31201bf6']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:01.353+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:01.356+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:01.393+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:01.397+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:01.434+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:01.434+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:01.435+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-07-04T14:16:01.437+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.179 seconds (process running for 3.515)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+2025-07-04T14:16:01.447+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testDeletePost_wrongOwner_returns403" classname="com.example.mono_backend.ControllerTest" time="0.011">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:01.456+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:01.456+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:01.490+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:01.492+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:01.512+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:01.518+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:279e20b7-9d6b-4bc2-b5a7-fd813f1b907c;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:01.523+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:01.523+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:01.526+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:01.527+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:01.527+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@13fd5aaa']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:01.538+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:01.542+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:01.574+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:01.577+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:01.603+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:01.603+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:01.603+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:01.606+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.158 seconds (process running for 3.684)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+2025-07-04T14:16:01.617+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testLikeAndUnlikePost" classname="com.example.mono_backend.ControllerTest" time="0.021">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:01.625+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:01.625+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:01.659+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:01.661+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:01.681+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:01.686+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:aa4e3e8d-fc16-465e-b9cf-33d5ab4986ae;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:01.691+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:01.691+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:01.694+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:01.695+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:01.695+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@73372652']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:01.713+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:01.717+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:01.749+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:01.752+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:01.777+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:01.777+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:01.777+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:01.780+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.161 seconds (process running for 3.858)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+Hibernate: insert into likes (post_id,user_id,id) values (?,?,default)
+Hibernate: select count(l1_0.id) from likes l1_0 where l1_0.post_id=?
+Hibernate: update posts set user_id=?,content=?,likes=?,timestamp=? where id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+Hibernate: delete from likes where id=?
+Hibernate: select count(l1_0.id) from likes l1_0 where l1_0.post_id=?
+Hibernate: update posts set user_id=?,content=?,likes=?,timestamp=? where id=?
+2025-07-04T14:16:01.801+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetUserProfile_success" classname="com.example.mono_backend.ControllerTest" time="0.01">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:01.810+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:01.810+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:01.841+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:01.843+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:01.863+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:01.868+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:74b88992-9d70-4f40-b9de-8226baa798d4;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:01.873+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:01.873+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:01.876+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:01.877+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:01.877+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@685d9816']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:01.888+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:01.891+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:01.919+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:01.922+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:01.946+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:01.946+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:01.946+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:01.949+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.146 seconds (process running for 4.027)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+2025-07-04T14:16:01.959+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testFollowAndUnfollowEndpoints" classname="com.example.mono_backend.ControllerTest" time="0.012">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:01.968+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:01.968+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:02.000+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:02.002+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:02.017+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:02.022+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:374379a5-79f3-49d1-8c7d-50714cc6dc8e;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:02.026+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:02.026+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:02.029+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:02.029+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:02.029+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@2b4f99e5']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:02.040+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:02.043+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:02.067+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:02.070+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:02.092+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:02.092+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:02.093+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-07-04T14:16:02.096+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.135 seconds (process running for 4.174)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select f1_0.id,f1_0.follower_username,f1_0.following_username from follows f1_0 where f1_0.follower_username=? and f1_0.following_username=?
+Hibernate: insert into follows (follower_username,following_username,id) values (?,?,default)
+Hibernate: select f1_0.id,f1_0.follower_username,f1_0.following_username from follows f1_0 where f1_0.follower_username=? and f1_0.following_username=?
+Hibernate: delete from follows where id=?
+2025-07-04T14:16:02.108+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetFeed_unknownUser_emptyList" classname="com.example.mono_backend.ControllerTest" time="0.008">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:02.117+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:02.117+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:02.150+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:02.152+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:02.166+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:02.172+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:69ff7e6e-0881-43c8-9f90-3bc89946d389;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:02.176+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:02.176+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:02.179+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:02.180+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:02.180+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@2560add9']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:02.191+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:02.194+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:02.221+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:02.224+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:02.245+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:02.245+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:02.245+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:02.251+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.141 seconds (process running for 4.329)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+2025-07-04T14:16:02.259+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testCreatePost_nonExistingUser_returns404" classname="com.example.mono_backend.ControllerTest" time="0.009">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:02.267+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:02.267+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:02.296+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:02.298+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:02.312+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:02.319+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:f0d66a1c-48ce-4801-85a0-f23e50fe184f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:02.323+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:02.324+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:02.327+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:02.327+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:02.327+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@5397c8da']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:02.338+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:02.341+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:02.366+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:02.369+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:02.391+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:02.391+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:02.391+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:02.394+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.132 seconds (process running for 4.472)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+2025-07-04T14:16:02.402+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteNonexistentPost_returns404" classname="com.example.mono_backend.ControllerTest" time="0.017">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:02.410+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:02.410+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:02.438+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:02.440+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:02.453+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:02.458+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:0ef1aece-5c4d-43ca-822f-0dd650ebec56;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:02.462+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:02.463+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:02.466+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:02.466+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:02.467+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@67dab898']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:02.479+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:02.482+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:02.506+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:02.508+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:02.529+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:02.529+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:02.529+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:02.531+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.128 seconds (process running for 4.609)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+2025-07-04T14:16:02.548+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetPosts_unknownAuthor_emptyArray" classname="com.example.mono_backend.ControllerTest" time="0.008">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:02.555+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:02.555+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:02.583+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:02.584+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:02.599+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:02.604+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:68380d1b-4543-45a5-a0b7-1451c1354839;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:02.608+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:02.609+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:02.612+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:02.612+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:02.612+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@6f893ea5']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:02.622+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:02.625+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:02.651+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:02.655+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:02.676+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:02.676+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:02.677+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-07-04T14:16:02.679+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.13 seconds (process running for 4.757)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 left join users a1_0 on a1_0.id=p1_0.user_id where a1_0.username=?
+2025-07-04T14:16:02.687+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testUserExists_true_and_false" classname="com.example.mono_backend.ControllerTest" time="0.012">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:02.694+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:02.694+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:02.722+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:02.724+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:02.739+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:02.744+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:00c88d58-5239-41e8-9716-80bddab38252;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:02.747+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:02.748+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:02.750+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:02.751+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:02.751+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@26308d2a']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:02.761+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:02.763+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:02.785+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:02.788+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:02.812+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:02.812+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:02.812+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:02.814+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.125 seconds (process running for 4.892)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select u1_0.id from users u1_0 where upper(u1_0.username)=upper(?) fetch first ? rows only
+Hibernate: select u1_0.id from users u1_0 where upper(u1_0.username)=upper(?) fetch first ? rows only
+2025-07-04T14:16:02.826+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetFeed_onlyFollowedAndSelf" classname="com.example.mono_backend.ControllerTest" time="0.022">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:02.833+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:02.833+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:02.866+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:02.868+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:02.885+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:02.890+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:ab2a41bc-1fc0-4f30-8261-c9743ab9a531;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:02.893+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:02.894+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:02.898+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:02.898+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:02.899+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@5f078f1f']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:02.908+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:02.911+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:02.933+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:02.936+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:02.955+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:02.956+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:02.956+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:02.958+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.131 seconds (process running for 5.036)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select f1_0.id,f1_0.follower_username,f1_0.following_username from follows f1_0 where f1_0.follower_username=? and f1_0.following_username=?
+Hibernate: insert into follows (follower_username,following_username,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select f1_0.id,f1_0.follower_username,f1_0.following_username from follows f1_0 where f1_0.follower_username=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.user_id in (?,?) order by p1_0.timestamp desc
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+2025-07-04T14:16:02.980+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testCreatePost" classname="com.example.mono_backend.ControllerTest" time="0.009">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:02.988+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:02.988+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:03.029+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:03.031+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:03.053+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:03.061+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:4967e114-9bd3-4ddb-b165-db085e6953d8;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:03.066+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:03.067+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:03.071+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:03.071+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:03.072+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@2550a63c']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:03.084+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:03.089+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:03.115+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:03.119+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:03.143+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:03.143+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:03.143+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:03.146+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.164 seconds (process running for 5.224)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+2025-07-04T14:16:03.155+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testLoginUser_wrongPassword" classname="com.example.mono_backend.ControllerTest" time="0.01">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:03.163+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:03.163+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:03.195+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:03.197+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:03.212+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:03.217+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:020a2460-34dd-4ea8-859f-33e76cb5d1a9;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:03.220+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:03.221+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:03.224+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:03.224+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:03.224+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@5b0480a3']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:03.234+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:03.238+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:03.272+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:03.275+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:03.297+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:03.297+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:03.298+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-07-04T14:16:03.301+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.144 seconds (process running for 5.379)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+2025-07-04T14:16:03.310+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetPosts_onlyViewer_computesLikedByUser" classname="com.example.mono_backend.ControllerTest" time="0.012">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:03.319+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:03.319+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:03.352+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:03.355+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:03.369+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:03.374+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:8d87fa0e-435f-4846-9a6b-a30425a61d95;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:03.379+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:03.380+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:03.384+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:03.385+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:03.385+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@68c9bef8']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:03.398+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:03.403+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:03.432+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:03.434+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:03.454+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:03.454+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:03.454+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:03.457+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.145 seconds (process running for 5.535)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.user_id=? and l1_0.post_id=?
+2025-07-04T14:16:03.468+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testDeletePost" classname="com.example.mono_backend.ControllerTest" time="0.01">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:03.475+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:03.475+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:03.503+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:03.505+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:03.518+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:03.522+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:1262dc75-6a5b-4f90-864d-8dbbca52549e;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:03.526+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:03.526+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:03.529+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:03.529+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:03.529+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@76a79d92']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:03.539+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:03.541+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:03.561+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:03.563+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:03.582+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:03.582+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:03.582+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:03.584+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.115 seconds (process running for 5.662)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0 where p1_0.id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: select l1_0.id,l1_0.post_id,l1_0.user_id from likes l1_0 where l1_0.post_id=?
+Hibernate: delete from posts where id=?
+2025-07-04T14:16:03.594+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateUserProfile_success" classname="com.example.mono_backend.ControllerTest" time="0.008">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:03.600+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:03.600+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:03.625+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:03.627+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:03.639+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:03.644+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:b47a434f-0c85-4a70-a220-18c4bef69836;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:03.647+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:03.648+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:03.651+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:03.651+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:03.651+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@62f4e37f']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:03.661+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:03.663+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:03.686+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:03.688+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:03.707+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:03.707+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:03.707+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:03.709+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.114 seconds (process running for 5.787)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: update users set bio=?,email=?,full_name=?,password=?,username=? where id=?
+2025-07-04T14:16:03.718+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testGetAllPosts_noParams_returnsAllPosts" classname="com.example.mono_backend.ControllerTest" time="0.011">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:03.724+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:03.724+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:03.749+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:03.751+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:03.763+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:03.768+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:9423472d-26d7-4566-ac86-dc773fa90afe;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:03.771+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:03.771+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:03.774+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:03.774+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:03.774+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@64280fbe']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:03.784+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:03.786+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:03.806+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:03.809+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:03.826+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:03.827+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:03.827+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:03.829+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.11 seconds (process running for 5.907)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: insert into posts (user_id,content,likes,timestamp,id) values (?,?,?,?,default)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0 where u1_0.id=?
+2025-07-04T14:16:03.840+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testRegisterUser_success" classname="com.example.mono_backend.ControllerTest" time="0.008">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:03.846+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:03.846+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:03.874+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:03.876+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:03.889+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:03.894+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:d3b72a59-ccfa-4042-a6ca-bb4b1549ffb0;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:03.897+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:03.898+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:03.901+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:03.901+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:03.901+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@46f72643']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:03.911+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:03.914+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:03.935+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:03.938+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:03.957+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:03.957+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:03.957+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:03.960+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.118 seconds (process running for 6.038)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: select u1_0.id from users u1_0 where upper(u1_0.username)=upper(?) fetch first ? rows only
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+2025-07-04T14:16:03.967+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+  <testcase name="testRegisterUser_duplicateUsername_returnsTaken" classname="com.example.mono_backend.ControllerTest" time="0.008">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-07-04T14:16:03.973+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Starting ControllerTest using Java 23.0.2 with PID 78813 (started by efeisildar in /Users/efeisildar/ics-wtp-mono/mono-backend)
+2025-07-04T14:16:03.973+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : The following 1 profile is active: "test"
+2025-07-04T14:16:04.000+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-04T14:16:04.002+02:00  INFO 78813 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 4 JPA repository interfaces.
+2025-07-04T14:16:04.015+02:00  INFO 78813 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-07-04T14:16:04.020+02:00  INFO 78813 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:09da381d-d721-423f-a304-204be61c9f00;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-07-04T14:16:04.024+02:00  INFO 78813 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-04T14:16:04.025+02:00  INFO 78813 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-04T14:16:04.027+02:00  INFO 78813 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-04T14:16:04.028+02:00  WARN 78813 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-04T14:16:04.028+02:00  INFO 78813 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@53f6fa17']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-04T14:16:04.038+02:00  INFO 78813 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+Hibernate: create table follows (id bigint generated by default as identity, follower_username varchar(255) not null, following_username varchar(255) not null, primary key (id), unique (follower_username, following_username))
+Hibernate: create table likes (id bigint generated by default as identity, post_id bigint not null, user_id bigint not null, primary key (id), unique (user_id, post_id))
+Hibernate: create table posts (likes integer not null, id bigint generated by default as identity, timestamp timestamp(6) not null, user_id bigint not null, content varchar(300) not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, bio varchar(500), email varchar(255) unique, full_name varchar(255), password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+Hibernate: alter table if exists likes add constraint FKry8tnr4x2vwemv2bb0h5hyl0x foreign key (post_id) references posts
+Hibernate: alter table if exists likes add constraint FKnvx9seeqqyy71bij291pwiwrg foreign key (user_id) references users
+Hibernate: alter table if exists posts add constraint FK5lidm6cqbc7u4xhqpxm898qme foreign key (user_id) references users
+2025-07-04T14:16:04.040+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-04T14:16:04.063+02:00  WARN 78813 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-04T14:16:04.066+02:00  INFO 78813 --- [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-04T14:16:04.086+02:00  INFO 78813 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-04T14:16:04.086+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-04T14:16:04.086+02:00  INFO 78813 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-07-04T14:16:04.089+02:00  INFO 78813 --- [           main] c.example.mono_backend.ControllerTest    : Started ControllerTest in 0.121 seconds (process running for 6.167)
+Hibernate: select p1_0.id,p1_0.user_id,p1_0.content,p1_0.likes,p1_0.timestamp from posts p1_0
+Hibernate: select u1_0.id,u1_0.bio,u1_0.email,u1_0.full_name,u1_0.password,u1_0.username from users u1_0
+Hibernate: insert into users (bio,email,full_name,password,username,id) values (?,?,?,?,?,default)
+Hibernate: select u1_0.id from users u1_0 where upper(u1_0.username)=upper(?) fetch first ? rows only
+2025-07-04T14:16:04.096+02:00  INFO 78813 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists follows cascade 
+Hibernate: drop table if exists likes cascade 
+Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
+]]></system-out>
+  </testcase>
+</testsuite>

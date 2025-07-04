@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'BerlinType';
   src: url('./assets/fonts/BerlinTypeWeb-Regular.woff2') format('woff2');
@@ -75,4 +74,12 @@ div:hover .tooltip-text {
 
 .nav-item-wrapper:hover .tooltip-text {
   opacity: 1;
+}
+
+html, body, #root {
+  background-color: #F8FAFC;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'BerlinType', sans-serif;
 }

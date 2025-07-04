@@ -1,8 +1,9 @@
-// FOLLOW ENTITY
-// represents one user following another user
 package com.example.mono_backend.model;
 
 import jakarta.persistence.*;
+
+// FOLLOW ENTITY
+// represents one user following another user
 
 @Entity
 @Table(name = "follows", uniqueConstraints = {
@@ -15,11 +16,11 @@ public class Follow {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // username of user who is following
+    // the username of user the follower
     @Column(name = "follower_username", nullable = false)
     private String follower;
 
-    // username of user being followed
+    // the username of user being followed
     @Column(name = "following_username", nullable = false)
     private String following;
 
@@ -31,6 +32,7 @@ public class Follow {
         this.following = following;
     }
 
+    // getters
     public Long getId() { return id; }
 
     public String getFollower() { return follower; }

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // POST ENTITY
 // represents a microblog post in the database
+
 @Entity
 @Table(name = "posts")
 public class Post {
@@ -15,7 +16,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment ID
     private Long id;
 
-    @Column(nullable = false, length = 280) // max 280 chars like twitter :p
+    @Column(nullable = false, length = 300) // max 300 char limit like twitter :p
     private String content;
 
     @Column(nullable = false) // like counter
@@ -31,7 +32,7 @@ public class Post {
     private User author;
 
     // CONSTRUCTORS:
-    public Post() {} // required by JPA
+    public Post() {}
 
     public Post(String content, LocalDateTime timestamp, User author) {
         this.content = content;

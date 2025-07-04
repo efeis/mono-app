@@ -1,7 +1,7 @@
 package com.example.mono_backend.service;
 
 // FOLLOW SERVICE
-// business logic for managing user follow relationships
+// handles follow/unfollow operations between users
 
 import com.example.mono_backend.model.Follow;
 import com.example.mono_backend.repository.FollowRepository;

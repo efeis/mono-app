@@ -1,5 +1,5 @@
-// POST CONTROLLER INTEGRATION TESTS
-// comprehensive tests for all post-related API endpoints
+// CONTROLLER TESTS
+// comprehensive tests for controller endpoints
 package com.example.mono_backend;
 
 import com.example.mono_backend.model.Post;
@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc                             // auto-configure MockMvc
 @AutoConfigureTestDatabase(replace = Replace.ANY) // use h2 for tests
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD) // clean db after each test
-class PostControllerTest {
+class ControllerTest {
 
     @Autowired MockMvc        mockMvc;    // for making HTTP requests
     @Autowired UserRepository userRepo;   // for test data setup
@@ -230,6 +230,111 @@ class PostControllerTest {
               .andExpect(status().isOk())
               .andExpect(jsonPath("$[0].likedByUser").value(false));
       }
+
+      @Test
+      void testRegisterUser_success() throws Exception {
+        // Test: Verify that a new user can register successfully
+          mockMvc.perform(post("/api/users/register")
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content("""
+                      {"username":"frodo","password":"ringbearer"}
+                  """))
+                .andExpect(status().isOk())
+                .andExpect(content().string("ok"));
+      }
+
+      @Test
+      void testRegisterUser_duplicateUsername_returnsTaken() throws Exception {
+          // Test: Verify that registering with an existing username returns "taken"
+          userRepo.save(new User("samwise", "gardener"));
+          mockMvc.perform(post("/api/users/register")
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content("""
+                      {"username":"samwise","password":"gardener"}
+                  """))
+                .andExpect(status().isOk())
+                .andExpect(content().string("taken"));
+      }
+
+      @Test
+      void testLoginUser_success() throws Exception {
+          // Test: Verify that a user can log in with correct credentials
+          userRepo.save(new User("aragorn", "anduril"));
+          mockMvc.perform(post("/api/users/login")
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content("""
+                      {"username":"aragorn","password":"anduril"}
+                  """))
+                .andExpect(status().isOk())
+                .andExpect(content().string("ok"));
+      }
+
+      @Test
+      void testLoginUser_wrongPassword() throws Exception {
+          // Test: Verify that logging in with a wrong password returns "wrong-password"
+          userRepo.save(new User("gimli", "axe"));
+          mockMvc.perform(post("/api/users/login")
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content("""
+                      {"username":"gimli","password":"wrong"}
+                  """))
+                .andExpect(status().isOk())
+                .andExpect(content().string("wrong-password"));
+      }
+
+      @Test
+      void testLoginUser_notFound() throws Exception { 
+          // Test: Verify that logging in with a non-existing user returns "not-found"
+          mockMvc.perform(post("/api/users/login")
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content("""
+                      {"username":"sauron","password":"darkness"}
+                  """))
+                .andExpect(status().isOk())
+                .andExpect(content().string("not-found"));
+      }
+
+      @Test
+      void testUpdateUserProfile_success() throws Exception {
+          // Test: Verify that a user can update their profile successfully
+          userRepo.save(new User("legolas", "elf"));
+          mockMvc.perform(put("/api/users/profile")
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content("""
+                      {"username":"legolas","fullName":"Legolas Greenleaf","bio":"Prince of the Woodland Realm"}
+                  """))
+                .andExpect(status().isOk())
+                .andExpect(content().string("updated"));
+      }
+
+      @Test
+      void testGetUserProfile_success() throws Exception {
+          // Test: Verify that a user's profile can be retrieved successfully
+          User u = new User("galadriel", "mirror");
+          u.setFullName("Lady Galadriel");
+          u.setEmail("galadriel@lorien.org");
+          u.setBio("Bearer of Nenya");
+          userRepo.save(u);
+          mockMvc.perform(get("/api/users/profile")
+                  .param("username", "galadriel"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.fullName").value("Lady Galadriel"))
+                .andExpect(jsonPath("$.email").value("galadriel@lorien.org"))
+                .andExpect(jsonPath("$.bio").value("Bearer of Nenya"));
+      }
+
+      @Test
+      void testUserExists_true_and_false() throws Exception {
+          // Test: Verify that the exists endpoint correctly identifies existing and non-existing users
+          userRepo.save(new User("boromir", "gondor"));
+          mockMvc.perform(get("/api/users/exists").param("username", "boromir"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.exists").value(true));
+          mockMvc.perform(get("/api/users/exists").param("username", "gollum"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.exists").value(false));
+      }
+
       
       @Test
       void testFollowAndUnfollowEndpoints() throws Exception {
