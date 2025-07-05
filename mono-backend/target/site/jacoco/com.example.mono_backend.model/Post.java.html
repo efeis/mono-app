@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Post.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mono-backend</a> &gt; <a href="index.source.html" class="el_package">com.example.mono_backend.model</a> &gt; <span class="el_source">Post.java</span></div><h1>Post.java</h1><pre class="source lang-java linenums">package com.example.mono_backend.model;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+// POST ENTITY
+// represents a microblog post in the database
+
+@Entity
+@Table(name = &quot;posts&quot;)
+public class Post {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment ID
+    private Long id;
+
+    @Column(nullable = false, length = 300) // max 300 char limit like twitter :p
+    private String content;
+
+<span class="fc" id="L22">    @Column(nullable = false) // like counter</span>
+    private int likes = 0;
+
+    @Column(nullable = false) // when post was created
+    private LocalDateTime timestamp;
+
+    // relationship to user who created the post
+    @ManyToOne(fetch = FetchType.LAZY) // many posts can belong to one user
+    @JoinColumn(name = &quot;user_id&quot;, nullable = false) // foreign key
+    @JsonIgnoreProperties({&quot;posts&quot;}) // prevent circular reference in JSON
+    private User author;
+
+    // CONSTRUCTORS:
+<span class="fc" id="L35">    public Post() {}</span>
+
+<span class="fc" id="L37">    public Post(String content, LocalDateTime timestamp, User author) {</span>
+<span class="fc" id="L38">        this.content = content;</span>
+<span class="fc" id="L39">        this.timestamp = timestamp;</span>
+<span class="fc" id="L40">        this.author = author;</span>
+<span class="fc" id="L41">    }</span>
+
+    // convenience method to get author username for JSON responses
+    public String getUsername() {
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        return author != null ? author.getUsername() : null;</span>
+    }
+
+    // getters and setters
+<span class="fc" id="L49">    public Long getId() { return id; }</span>
+
+<span class="fc" id="L51">    public String getContent() { return content; }</span>
+
+<span class="nc" id="L53">    public void setContent(String content) { this.content = content; }</span>
+
+<span class="fc" id="L55">    public LocalDateTime getTimestamp() { return timestamp; }</span>
+
+<span class="nc" id="L57">    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }</span>
+
+<span class="fc" id="L59">    public User getAuthor() { return author; }</span>
+
+<span class="nc" id="L61">    public void setAuthor(User author) { this.author = author; }</span>
+
+<span class="fc" id="L63">    public int getLikes() { return likes; }</span>
+
+<span class="fc" id="L65">    public void setLikes(int likes) { this.likes = likes; }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

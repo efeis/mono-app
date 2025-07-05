@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mono-backend</a> &gt; <a href="index.source.html" class="el_package">com.example.mono_backend.controllers</a> &gt; <span class="el_source">UserController.java</span></div><h1>UserController.java</h1><pre class="source lang-java linenums">// USER CONTROLLER
+// handles user registration, login, profile management, and follow/unfollow operations
+package com.example.mono_backend.controllers;
+
+import com.example.mono_backend.model.User;
+import com.example.mono_backend.repository.UserRepository;
+import com.example.mono_backend.service.FollowService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.*;
+
+// controller for handling user-related operations
+// allows user registration, login, profile management, and follow/unfollow operations
+
+@CrossOrigin(origins = &quot;http://localhost:3000&quot;) // allow frontend requests
+@RestController
+@RequestMapping(&quot;/api/users&quot;)
+public class UserController {
+
+    private final UserRepository userRepository;
+    private final FollowService followService;
+
+    @Autowired
+    public UserController(UserRepository userRepository,
+<span class="fc" id="L26">                          FollowService followService) {</span>
+<span class="fc" id="L27">        this.userRepository = userRepository;</span>
+<span class="fc" id="L28">        this.followService  = followService;</span>
+<span class="fc" id="L29">    }</span>
+
+    // USER CREATION &amp; AUTH
+
+    // register a new user account
+    @PostMapping(&quot;/register&quot;)
+    public String registerUser(@RequestBody User user) {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (userRepository.existsByUsernameIgnoreCase(user.getUsername())) {</span>
+<span class="fc" id="L37">            return &quot;taken&quot;; // username already exists</span>
+        }
+<span class="fc" id="L39">        userRepository.save(user);</span>
+<span class="fc" id="L40">        return &quot;ok&quot;;</span>
+    }
+
+    // authenticate user login
+    @PostMapping(&quot;/login&quot;)
+    public String loginUser(@RequestBody User loginReq) {
+<span class="fc" id="L46">        return userRepository.findByUsername(loginReq.getUsername())</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">            .map(u -&gt; u.getPassword().equals(loginReq.getPassword())</span>
+<span class="fc" id="L48">                      ? &quot;ok&quot;</span>
+<span class="fc" id="L49">                      : &quot;wrong-password&quot;)</span>
+<span class="fc" id="L50">            .orElse(&quot;not-found&quot;);</span>
+    }
+
+    // PROFILE MANAGEMENT
+
+    // get user profile information
+    @GetMapping(&quot;/profile&quot;)
+    public Map&lt;String, String&gt; getProfile(@RequestParam String username) {
+<span class="fc" id="L58">        return userRepository.findByUsername(username)</span>
+<span class="fc" id="L59">            .map(user -&gt; Map.of(</span>
+<span class="fc" id="L60">                &quot;fullName&quot;, Optional.ofNullable(user.getFullName()).orElse(&quot;&quot;),</span>
+<span class="fc" id="L61">                &quot;email&quot;,    Optional.ofNullable(user.getEmail()).orElse(&quot;&quot;),</span>
+<span class="fc" id="L62">                &quot;bio&quot;,      Optional.ofNullable(user.getBio()).orElse(&quot;&quot;)</span>
+            ))
+<span class="fc" id="L64">            .orElse(Map.of()); // return empty map if user not found</span>
+    }
+
+    // update user profile information
+    @PutMapping(&quot;/profile&quot;)
+    public String updateProfile(@RequestBody Map&lt;String, String&gt; req) {
+<span class="fc" id="L70">        String username = req.get(&quot;username&quot;);</span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        if (username == null) return &quot;missing-username&quot;;</span>
+
+<span class="fc" id="L73">        return userRepository.findByUsername(username)</span>
+<span class="fc" id="L74">            .map(user -&gt; {</span>
+                // update only provided fields
+<span class="fc" id="L76">                user.setFullName(req.getOrDefault(&quot;fullName&quot;, user.getFullName()));</span>
+<span class="fc" id="L77">                user.setEmail(req.getOrDefault(&quot;email&quot;, user.getEmail()));</span>
+<span class="fc" id="L78">                user.setBio(req.getOrDefault(&quot;bio&quot;, user.getBio()));</span>
+<span class="fc" id="L79">                userRepository.save(user);</span>
+<span class="fc" id="L80">                return &quot;updated&quot;;</span>
+            })
+<span class="fc" id="L82">            .orElse(&quot;not-found&quot;);</span>
+    }
+
+    // UTILITY ENDPOINTS
+
+    // check if username exists
+    @GetMapping(&quot;/exists&quot;)
+    public Map&lt;String, Boolean&gt; userExists(@RequestParam String username) {
+<span class="fc" id="L90">        boolean exists = userRepository.existsByUsernameIgnoreCase(username);</span>
+<span class="fc" id="L91">        return Map.of(&quot;exists&quot;, exists);</span>
+    }
+
+    // search for users by username pattern
+    @GetMapping(&quot;/search&quot;)
+    public List&lt;Map&lt;String,Object&gt;&gt; searchUsers(
+            @RequestParam(&quot;q&quot;) String q,      // search query
+            @RequestParam(&quot;me&quot;) String me     // current user (to check follow status)
+    ) {
+<span class="nc" id="L100">        var matches = userRepository</span>
+<span class="nc" id="L101">            .findByUsernameContainingIgnoreCase(q);</span>
+
+<span class="nc" id="L103">        return matches.stream()</span>
+<span class="nc" id="L104">            .map(u -&gt; Map.&lt;String,Object&gt;of(</span>
+<span class="nc" id="L105">                &quot;username&quot;,    u.getUsername(),</span>
+<span class="nc" id="L106">                &quot;isFollowing&quot;, followService.getFollowing(me)</span>
+<span class="nc" id="L107">                                            .contains(u.getUsername())</span>
+            ))
+<span class="nc" id="L109">            .toList();</span>
+    }
+
+    // FOLLOW / UNFOLLOW 
+
+    // follow another user
+    @PostMapping(&quot;/follow&quot;)
+    public String follow(@RequestBody Map&lt;String,String&gt; req) {
+<span class="fc" id="L117">        String follower  = req.get(&quot;follower&quot;);</span>
+<span class="fc" id="L118">        String following = req.get(&quot;following&quot;);</span>
+        // validate input
+<span class="pc bpc" id="L120" title="2 of 4 branches missed.">        if (follower == null </span>
+         || following == null 
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">         || follower.equals(following)) {</span>
+<span class="nc" id="L123">            return &quot;invalid&quot;;</span>
+        }
+<span class="fc" id="L125">        followService.follow(follower, following);</span>
+<span class="fc" id="L126">        return &quot;ok&quot;;</span>
+    }
+
+    // unfollow a user
+    @DeleteMapping(&quot;/follow&quot;)
+    public String unfollow(@RequestBody Map&lt;String,String&gt; req) {
+<span class="fc" id="L132">        String follower  = req.get(&quot;follower&quot;);</span>
+<span class="fc" id="L133">        String following = req.get(&quot;following&quot;);</span>
+        // validate input
+<span class="pc bpc" id="L135" title="2 of 4 branches missed.">        if (follower == null </span>
+         || following == null 
+<span class="pc bpc" id="L137" title="1 of 2 branches missed.">         || follower.equals(following)) {</span>
+<span class="nc" id="L138">            return &quot;invalid&quot;;</span>
+        }
+<span class="fc" id="L140">        followService.unfollow(follower, following);</span>
+<span class="fc" id="L141">        return &quot;ok&quot;;</span>
+    }
+
+    // get list of users following this user
+    @GetMapping(&quot;/followers&quot;)
+    public Map&lt;String,Set&lt;String&gt;&gt; getFollowers(@RequestParam String username) {
+<span class="nc" id="L147">        Set&lt;String&gt; followers = followService.getFollowers(username);</span>
+<span class="nc" id="L148">        return Map.of(&quot;followers&quot;, followers);</span>
+    }
+
+    // get list of users this user is following
+    @GetMapping(&quot;/following&quot;)
+    public Map&lt;String,Set&lt;String&gt;&gt; getFollowing(@RequestParam String username) {
+<span class="nc" id="L154">        Set&lt;String&gt; following = followService.getFollowing(username);</span>
+<span class="nc" id="L155">        return Map.of(&quot;following&quot;, following);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PostController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mono-backend</a> &gt; <a href="index.source.html" class="el_package">com.example.mono_backend.controllers</a> &gt; <span class="el_source">PostController.java</span></div><h1>PostController.java</h1><pre class="source lang-java linenums">package com.example.mono_backend.controllers;
+
+import com.example.mono_backend.dto.PostRequest;
+import com.example.mono_backend.dto.PostResponse;
+import com.example.mono_backend.model.Like;
+import com.example.mono_backend.model.Post;
+import com.example.mono_backend.model.User;
+import com.example.mono_backend.repository.LikeRepository;
+import com.example.mono_backend.repository.PostRepository;
+import com.example.mono_backend.repository.UserRepository;
+import com.example.mono_backend.service.FollowService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Set;
+
+// controller for handling posts
+// allows creating posts, liking/unliking, fetching posts, and managing feeds
+
+@CrossOrigin(origins = &quot;http://localhost:3000&quot;) // allow frontend requests
+@RestController
+@RequestMapping(&quot;/api/posts&quot;)
+<span class="fc" id="L27">public class PostController {</span>
+
+    @Autowired
+    private PostRepository postRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private LikeRepository likeRepository;
+
+    @Autowired
+    private FollowService followService;
+
+    // create a new post
+    @PostMapping
+    public ResponseEntity&lt;String&gt; createPost(@RequestBody PostRequest req) {
+<span class="fc" id="L44">        var optUser = userRepository.findByUsername(req.getUsername());</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (optUser.isEmpty()) {</span>
+<span class="fc" id="L46">            return ResponseEntity</span>
+<span class="fc" id="L47">                    .status(HttpStatus.NOT_FOUND)</span>
+<span class="fc" id="L48">                    .body(&quot;user-not-found&quot;);</span>
+        }
+        // create and save new post
+<span class="fc" id="L51">        Post p = new Post(req.getContent(), LocalDateTime.now(), optUser.get());</span>
+<span class="fc" id="L52">        postRepository.save(p);</span>
+<span class="fc" id="L53">        return ResponseEntity.ok(&quot;post-created&quot;);</span>
+    }
+
+    // toggle like/unlike on a post
+    @PostMapping(&quot;/{id}/like&quot;)
+    public ResponseEntity&lt;String&gt; toggleLike(@PathVariable Long id,
+                                             @RequestBody PostRequest req) {
+        // find user
+<span class="fc" id="L61">        var optMe = userRepository.findByUsername(req.getUsername());</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (optMe.isEmpty()) {</span>
+<span class="nc" id="L63">            return ResponseEntity</span>
+<span class="nc" id="L64">                    .status(HttpStatus.NOT_FOUND)</span>
+<span class="nc" id="L65">                    .body(&quot;user-not-found&quot;);</span>
+        }
+<span class="fc" id="L67">        User me = optMe.get();</span>
+
+        // find post
+<span class="fc" id="L70">        var optPost = postRepository.findById(id);</span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        if (optPost.isEmpty()) {</span>
+<span class="nc" id="L72">            return ResponseEntity</span>
+<span class="nc" id="L73">                    .status(HttpStatus.NOT_FOUND)</span>
+<span class="nc" id="L74">                    .body(&quot;post-not-found&quot;);</span>
+        }
+<span class="fc" id="L76">        Post post = optPost.get();</span>
+
+        // prevent self-liking
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (post.getAuthor().getUsername().equals(me.getUsername())) {</span>
+<span class="fc" id="L80">            return ResponseEntity</span>
+<span class="fc" id="L81">                    .status(HttpStatus.BAD_REQUEST)</span>
+<span class="fc" id="L82">                    .body(&quot;cannot-like-own-post&quot;);</span>
+        }
+
+        // toggle like status
+<span class="fc" id="L86">        var existing = likeRepository.findByUserAndPost(me, post);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (existing.isPresent()) {</span>
+            // unlike
+<span class="fc" id="L89">            likeRepository.delete(existing.get());</span>
+<span class="fc" id="L90">            post.setLikes((int) likeRepository.countByPost(post));</span>
+<span class="fc" id="L91">            postRepository.save(post);</span>
+<span class="fc" id="L92">            return ResponseEntity.ok(&quot;unliked&quot;);</span>
+        } else {
+            // like
+<span class="fc" id="L95">            likeRepository.save(new Like(me, post));</span>
+<span class="fc" id="L96">            post.setLikes((int) likeRepository.countByPost(post));</span>
+<span class="fc" id="L97">            postRepository.save(post);</span>
+<span class="fc" id="L98">            return ResponseEntity.ok(&quot;liked&quot;);</span>
+        }
+    }
+
+    // get posts - either all posts or posts by specific user
+    @GetMapping
+    public List&lt;PostResponse&gt; getPosts(
+            @RequestParam(required = false) String username, // filter by author
+            @RequestParam(required = false) String viewer    // user viewing (for like status)
+    ) {
+        List&lt;Post&gt; posts;
+<span class="pc bpc" id="L109" title="1 of 4 branches missed.">        if (username != null &amp;&amp; !username.isBlank()) {</span>
+            // get posts by specific user
+<span class="fc" id="L111">            posts = postRepository.findByAuthor_Username(username);</span>
+        } else {
+            // get all posts
+<span class="fc" id="L114">            posts = postRepository.findAll();</span>
+        }
+
+        // find viewer for like status calculation
+<span class="fc" id="L118">        User viewerUser = null;</span>
+<span class="pc bpc" id="L119" title="1 of 4 branches missed.">        if (viewer != null &amp;&amp; !viewer.isBlank()) {</span>
+<span class="fc" id="L120">            viewerUser = userRepository.findByUsername(viewer).orElse(null);</span>
+        }
+
+        // convert to response DTOs with like status
+<span class="fc" id="L124">        User finalViewerUser = viewerUser;</span>
+<span class="fc" id="L125">        return posts.stream()</span>
+<span class="fc" id="L126">                .map(post -&gt; {</span>
+<span class="fc" id="L127">                    boolean likedByUser = false;</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">                    if (finalViewerUser != null) {</span>
+<span class="fc" id="L129">                        likedByUser = likeRepository.findByUserAndPost(finalViewerUser, post).isPresent();</span>
+                    }
+<span class="fc" id="L131">                    return new PostResponse(</span>
+<span class="fc" id="L132">                            post.getId(),</span>
+<span class="fc" id="L133">                            post.getAuthor().getUsername(),</span>
+<span class="fc" id="L134">                            post.getContent(),</span>
+<span class="fc" id="L135">                            post.getLikes(),</span>
+<span class="fc" id="L136">                            post.getTimestamp(),</span>
+                            likedByUser
+                    );
+                })
+<span class="fc" id="L140">                .toList();</span>
+    }
+
+    // get personalized feed for user (posts from followed users + own posts)
+    @GetMapping(&quot;/feed&quot;)
+    public List&lt;PostResponse&gt; getFeed(@RequestParam String username) {
+<span class="fc" id="L146">        User me = userRepository.findByUsername(username).orElse(null);</span>
+<span class="fc bfc" id="L147" title="All 2 branches covered.">        if (me == null) {</span>
+<span class="fc" id="L148">            return List.of(); // return empty feed for unknown user</span>
+        }
+
+        // get users this user follows + self
+<span class="fc" id="L152">        Set&lt;String&gt; follows = followService.getFollowing(username);</span>
+<span class="fc" id="L153">        follows.add(username); // include own posts</span>
+
+        // find all users to include in feed
+<span class="fc" id="L156">        List&lt;User&gt; authors = userRepository.findAll().stream()</span>
+<span class="fc" id="L157">                .filter(u -&gt; follows.contains(u.getUsername()))</span>
+<span class="fc" id="L158">                .toList();</span>
+
+        // get posts from these authors, newest first, limit to 20
+<span class="fc" id="L161">        return postRepository</span>
+<span class="fc" id="L162">                .findAllByAuthorInOrderByTimestampDesc(authors)</span>
+<span class="fc" id="L163">                .stream()</span>
+<span class="fc" id="L164">                .limit(20)</span>
+<span class="fc" id="L165">                .map(post -&gt; {</span>
+<span class="fc" id="L166">                    boolean likedByMe = likeRepository.findByUserAndPost(me, post).isPresent();</span>
+<span class="fc" id="L167">                    return new PostResponse(</span>
+<span class="fc" id="L168">                            post.getId(),</span>
+<span class="fc" id="L169">                            post.getAuthor().getUsername(),</span>
+<span class="fc" id="L170">                            post.getContent(),</span>
+<span class="fc" id="L171">                            post.getLikes(),</span>
+<span class="fc" id="L172">                            post.getTimestamp(),</span>
+                            likedByMe
+                    );
+                })
+<span class="fc" id="L176">                .toList();</span>
+    }
+
+    // get IDs of posts liked by a user
+    @GetMapping(&quot;/liked-ids&quot;)
+    public List&lt;Long&gt; getLikedPostIds(@RequestParam String username) {
+<span class="fc" id="L182">        User user = userRepository.findByUsername(username).orElse(null);</span>
+<span class="pc bpc" id="L183" title="1 of 2 branches missed.">        if (user == null) {</span>
+<span class="nc" id="L184">            return List.of();</span>
+        }
+<span class="fc" id="L186">        return likeRepository.findAllByUser(user)</span>
+<span class="fc" id="L187">                .stream()</span>
+<span class="fc" id="L188">                .map(like -&gt; like.getPost().getId())</span>
+<span class="fc" id="L189">                .toList();</span>
+    }
+
+    // delete a post (only by its author)
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;String&gt; deletePost(@PathVariable Long id,
+                                             @RequestParam String username) {
+        // find post
+<span class="fc" id="L197">        var optPost = postRepository.findById(id);</span>
+<span class="fc bfc" id="L198" title="All 2 branches covered.">        if (optPost.isEmpty()) {</span>
+<span class="fc" id="L199">            return ResponseEntity</span>
+<span class="fc" id="L200">                    .status(HttpStatus.NOT_FOUND)</span>
+<span class="fc" id="L201">                    .body(&quot;post-not-found&quot;);</span>
+        }
+<span class="fc" id="L203">        Post post = optPost.get();</span>
+
+        // verify ownership
+<span class="fc bfc" id="L206" title="All 2 branches covered.">        if (!post.getAuthor().getUsername().equals(username)) {</span>
+<span class="fc" id="L207">            return ResponseEntity</span>
+<span class="fc" id="L208">                    .status(HttpStatus.FORBIDDEN)</span>
+<span class="fc" id="L209">                    .body(&quot;unauthorized&quot;);</span>
+        }
+
+        // delete associated likes first, then post
+<span class="fc" id="L213">        likeRepository.deleteAll(likeRepository.findAllByPost(post));</span>
+<span class="fc" id="L214">        postRepository.delete(post);</span>
+<span class="fc" id="L215">        return ResponseEntity.ok(&quot;deleted&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

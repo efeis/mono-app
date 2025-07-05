@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FollowService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mono-backend</a> &gt; <a href="index.source.html" class="el_package">com.example.mono_backend.service</a> &gt; <span class="el_source">FollowService.java</span></div><h1>FollowService.java</h1><pre class="source lang-java linenums">package com.example.mono_backend.service;
+
+// FOLLOW SERVICE
+// handles follow/unfollow operations between users
+
+import com.example.mono_backend.model.Follow;
+import com.example.mono_backend.repository.FollowRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@Service
+<span class="fc" id="L15">public class FollowService {</span>
+
+    @Autowired
+    private FollowRepository followRepository;
+
+    // create a follow relationship between two users
+    public void follow(String follower, String following) {
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        if (follower.equals(following)) return; // prevent self-following</span>
+
+        // check if relationship already exists
+<span class="fc" id="L25">        boolean exists = followRepository</span>
+<span class="fc" id="L26">            .findByFollowerAndFollowing(follower, following)</span>
+<span class="fc" id="L27">            .isPresent();</span>
+
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (!exists) {</span>
+<span class="fc" id="L30">            followRepository.save(new Follow(follower, following));</span>
+        }
+<span class="fc" id="L32">    }</span>
+
+    // remove a follow relationship
+    public void unfollow(String follower, String following) {
+<span class="fc" id="L36">        followRepository.findByFollowerAndFollowing(follower, following)</span>
+<span class="fc" id="L37">            .ifPresent(followRepository::delete); // delete if exists</span>
+<span class="fc" id="L38">    }</span>
+
+    // get all users who follow this user
+    public Set&lt;String&gt; getFollowers(String username) {
+<span class="nc" id="L42">        return followRepository.findByFollowing(username).stream()</span>
+<span class="nc" id="L43">            .map(Follow::getFollower)</span>
+<span class="nc" id="L44">            .collect(Collectors.toSet());</span>
+    }
+
+    // get all users this user is following
+    public Set&lt;String&gt; getFollowing(String username) {
+<span class="fc" id="L49">        return followRepository.findByFollower(username).stream()</span>
+<span class="fc" id="L50">            .map(Follow::getFollowing)</span>
+<span class="fc" id="L51">            .collect(Collectors.toSet());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Like.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mono-backend</a> &gt; <a href="index.source.html" class="el_package">com.example.mono_backend.model</a> &gt; <span class="el_source">Like.java</span></div><h1>Like.java</h1><pre class="source lang-java linenums">package com.example.mono_backend.model;
+
+import jakarta.persistence.*;
+
+// LIKE ENTITY: representing a user's like on a post
+// contains user and post references, ensuring a user can like a post only once
+
+@Entity
+@Table(name = &quot;likes&quot;, uniqueConstraints = @UniqueConstraint(columnNames = {&quot;user_id&quot;, &quot;post_id&quot;}))
+public class Like {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    // the user who liked the post
+    @ManyToOne
+    @JoinColumn(name = &quot;user_id&quot;, nullable = false)
+    private User user;
+
+    // the post that was liked
+    @ManyToOne
+    @JoinColumn(name = &quot;post_id&quot;, nullable = false)
+    private Post post;
+
+    // CONSTRUCTORS 
+<span class="fc" id="L27">    public Like() {}</span>
+
+<span class="fc" id="L29">    public Like(User user, Post post) {</span>
+<span class="fc" id="L30">        this.user = user;</span>
+<span class="fc" id="L31">        this.post = post;</span>
+<span class="fc" id="L32">    }</span>
+
+    // getters and setters
+
+    public Long getId() {
+<span class="nc" id="L37">        return id;</span>
+    }
+
+    public User getUser() {
+<span class="nc" id="L41">        return user;</span>
+    }
+
+    public void setUser(User user) {
+<span class="nc" id="L45">        this.user = user;</span>
+<span class="nc" id="L46">    }</span>
+
+    public Post getPost() {
+<span class="fc" id="L49">        return post;</span>
+    }
+
+    public void setPost(Post post) {
+<span class="nc" id="L53">        this.post = post;</span>
+<span class="nc" id="L54">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
