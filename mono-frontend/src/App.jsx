@@ -1,16 +1,28 @@
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import MainLayout from "./components/MainLayout";
 import EditProfile from "./pages/EditProfile";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+
+const asset = (name) => `${import.meta.env.BASE_URL}${name}`;
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isAuthPage = location.pathname === "/auth";
   const [hoveredItem, setHoveredItem] = useState(null);
+
+  const navItems = useMemo(
+    () => [
+      { icon: asset("mono-search-1x.png"), path: "/search", label: "search" },
+      { icon: asset("mono-logo-1x.png"),   path: "/home",   label: "home" },
+      { icon: asset("mono-profile-1x.png"),path: "/profile",label: "profile" },
+    ],
+    []
+  );
 
   return (
     <div style={{ display: "flex" }}>
@@ -31,26 +43,17 @@ function App() {
             zIndex: 1000,
           }}
         >
-          {[
-            { icon: "/mono-search-1x.png", path: "/search", label: "search" },
-            { icon: "/mono-logo-1x.png", path: "/home", label: "home" },
-            { icon: "/mono-profile-1x.png", path: "/profile", label: "profile" },
-          ].map((item) => {
+          {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             const isHovered = hoveredItem === item.path;
 
             return (
               <div
                 key={item.path}
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
+                style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center" }}
                 onMouseEnter={() => setHoveredItem(item.path)}
                 onMouseLeave={() => setHoveredItem(null)}
-                onClick={() => (window.location.href = item.path)}
+                onClick={() => navigate(item.path)}
               >
                 <img
                   src={item.icon}
@@ -77,7 +80,7 @@ function App() {
                     }}
                   />
                 )}
-                {(isHovered) && (
+                {isHovered && (
                   <div
                     style={{
                       position: "absolute",
@@ -104,12 +107,7 @@ function App() {
       )}
 
       {/* Main Content */}
-      <div
-        style={{
-          backgroundColor: "#F8FAFC",
-          width: "100%",
-        }}
-      >
+      <div style={{ backgroundColor: "#F8FAFC", width: "100%" }}>
         <Routes>
           <Route path="/auth" element={<Auth />} />
           <Route path="/" element={<MainLayout />}>
@@ -118,7 +116,7 @@ function App() {
             <Route path="search" element={<Search />} />
             <Route path="profile" element={<Profile />} />
             <Route path="profile/:username" element={<Profile />} />
-            <Route path="/edit-profile" element={<EditProfile />} />
+            <Route path="edit-profile" element={<EditProfile />} />
           </Route>
         </Routes>
       </div>
