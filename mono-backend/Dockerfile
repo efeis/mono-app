@@ -1,17 +1,21 @@
-FROM eclipse-temurin:21-jdk
+# syntax=docker/dockerfile:1
+
+FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# Copy Maven wrapper and pom.xml
+COPY pom.xml .
 COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN chmod +x ./mvnw
-RUN ./mvnw dependency:resolve
+COPY mvnw .
+RUN chmod +x mvnw && ./mvnw -q -DskipTests dependency:go-offline
 
-# Copy source code
 COPY src ./src
+RUN ./mvnw -q -DskipTests package
 
-# Expose port
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
 
-# Run the application
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar --spring.profiles.active=demo"]
