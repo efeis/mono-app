@@ -19,17 +19,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+
+      - name: Use Node 20
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: mono-frontend/package-lock.json
-      - run: npm ci
-      - run: npm run build
+
+      - name: Print working dir & files (debug)
+        run: |
+          pwd
+          ls -la
+          node -v
+          npm -v
+          cat package.json
+
+      - name: Install deps
+        run: npm ci || npm install
+
+      - name: Build
+        run: npm run build
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: mono-frontend/dist
+          path: mono-frontend/dist  # If CRA, change to mono-frontend/build
 
   deploy:
     needs: build
