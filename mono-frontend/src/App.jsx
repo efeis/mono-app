@@ -7,6 +7,7 @@ import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import MainLayout from "./components/MainLayout";
+import RequireAuth from "./components/RequireAuth";
 
 const asset = (name) => `${import.meta.env.BASE_URL}${name}`;
 
@@ -119,7 +120,15 @@ function App() {
       <div style={{ backgroundColor: "#F8FAFC", width: "100%" }}>
         <Routes>
           <Route path="/auth" element={<Auth />} />
-          <Route path="/" element={<MainLayout />}>
+          {/* Protect all other routes using RequireAuth */}
+          <Route
+            path="/"
+            element={
+              <RequireAuth>
+                <MainLayout />
+              </RequireAuth>
+            }
+          >
             <Route index element={<Navigate to="home" replace />} />
             <Route path="home" element={<Home />} />
             <Route path="search" element={<Search />} />
