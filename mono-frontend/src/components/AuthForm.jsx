@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi"; // icons for password visibility toggle
-
+const asset = (name) => `${import.meta.env.BASE_URL}${name}`;
 console.log("authForm loaded");
 
 export default function AuthForm() {
